@@ -1,0 +1,83 @@
+﻿@using SweetHome.ViewModels;
+@using SweetHome.Models
+@model SellerVM
+<div class="ltn__myaccount-tab-content-inner">
+    <form method="post" enctype="multipart/form-data">
+        <h6>Property Description</h6>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-item input-item-textarea ltn__custom-icon">
+                    <input asp-for="Product.Name" placeholder="Title">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="input-item input-item-textarea ltn__custom-icon">
+                    <input asp-for="Product.Description" placeholder="Description">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="input-item input-item-textarea ltn__custom-icon">
+                    <input asp-for="Product.Price" placeholder="Price">
+                </div>
+            </div>
+        </div>
+        <h6>Select Categories</h6>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="input-item">
+                    <select asp-for="Product.CategoryId" asp-items="new SelectList(ViewBag.Categories,nameof(Category.Id),nameof(Category.Name))"></select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="input-item">
+                    <select asp-for="Product.CityId" asp-items="new SelectList(ViewBag.Cities,nameof(City.Id),nameof(City.Name))"></select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="input-item">
+                    <select asp-for="Product.StatusId" asp-items="new SelectList(ViewBag.Status,nameof(Status.Id),nameof(Status.Name))"></select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="input-item">
+                    <select asp-for="Product.HomeTypeId" asp-items="new SelectList(ViewBag.Type,nameof(HomeType.Id),nameof(HomeType.Name))"></select>
+                </div>
+            </div>
+        </div>
+        <h6>Listing Media</h6>
+        <div class="col-md-6">
+            <label asp-for="Product.ImageMain">ImageMain</label>
+            <input asp-for="Product.ImageMain" class="btn theme-btn-3 mb-10"><br>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Product.Files">Files</label>
+            <input asp-for="Product.Files" class="btn theme-btn-3 mb-10"><br>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <label asp-for="Product.TeamId">Team</label>
+            <select asp-for="Product.TeamId" asp-items="new SelectList(ViewBag.Team,nameof(Team.Id),nameof(Team.Name))"></select>
+        </div>
+        <h6>Listing Details</h6>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-item input-item-textarea ltn__custom-icon">
+                    <label asp-for="Product.Room">Room</label>
+                    <input asp-for="Product.Room" placeholder="Room">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-item input-item-textarea ltn__custom-icon">
+                    <label asp-for="Product.HomeSize"></label>
+                    <input asp-for="Product.HomeSize" placeholder="Area">
+                </div>
+            </div>
+            <div class="row">
+                <label asp-for="Product.AminitieIds">Aminities</label>
+                <select asp-for="Product.AminitieIds" asp-items="new SelectList(ViewBag.Aminities,nameof(Aminities.Id),nameof(Aminities.Name))"></select>
+            </div>
+            <div class="btn-wrapper text-center--- mt-30">
+                <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Submit Property</button>
+            </div>
+        </div>
+    </form>
+</div>
