@@ -20,18 +20,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXN0YXRlQWRtaW5cVmlld3NcQWJvdXRVc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/hp/OneDrive/Desktop/My Final Project/SweetHome/SweetHome/Areas/EstateAdmin/Views/Aminities/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXN0YXRlQWRtaW5cVmlld3NcQW1pbml0aWVzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/hp/OneDrive/Desktop/My Final Project/SweetHome/SweetHome/Areas/EstateAdmin/Views/Aminities/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXN0YXRlQWRtaW5cVmlld3NcQW1pbml0aWVzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/hp/OneDrive/Desktop/My Final Project/SweetHome/SweetHome/Areas/EstateAdmin/Views/Aminities/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXN0YXRlQWRtaW5cVmlld3NcQW1pbml0aWVzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/hp/OneDrive/Desktop/My Final Project/SweetHome/SweetHome/Areas/EstateAdmin/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRXN0YXRlQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -130,6 +118,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/hp/OneDrive/Desktop/My Final Project/SweetHome/SweetHome/Views/MyAccount/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlBY2NvdW50XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hp/OneDrive/Desktop/My Final Project/SweetHome/SweetHome/Views/MyAccount/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXlBY2NvdW50XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/hp/OneDrive/Desktop/My Final Project/SweetHome/SweetHome/Views/MyAccount/SellerProfile.cshtml]

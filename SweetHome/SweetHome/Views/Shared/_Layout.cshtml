@@ -85,20 +85,6 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                            
-                                        @if (member != null)
-                                        {
-                                            @if (member.IsAgent == true)
-                                            {
-                                                <li>
-                                                    <!-- header-top-btn -->
-                                                    <div class="header-top-btn">
-
-                                                        <a href="add-listing.html">Add Listing</a>
-                                                    </div>
-                                                </li>
-                                            }
-                                        }
                                     </ul>
                                 </div>
                             </div>
@@ -132,32 +118,17 @@
                                 <nav>
                                     <div class="ltn__main-menu">
                                         <ul>
-                                            <li class="menu-icon">
+                                            <li>
                                                 <a class="nav-link scrollto active" asp-controller="Home" asp-action="Index">Home</a>
-                                                
                                             </li>
-                                            <li class="menu-icon">
-                                                <a href="#">About</a>
-                                                <ul>
-                                                    <li><a asp-controller="About" asp-action="Index">About</a></li>
-                                                    <li><a href="service.html">Services</a></li>
-                                                    <li><a href="service-details.html">Service Details</a></li>
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="portfolio-2.html">Portfolio - 02</a></li>
-                                                    <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                    <li><a href="team-details.html">Team Details</a></li>
-                                                    <li><a href="faq.html">FAQ</a></li>
-                                                </ul>
+                                            <li><a asp-controller="About" asp-action="Index">About</a>
                                             </li>
-                                           
-                                            <li><a asp-controller="Team" asp-action="Index">Team</a></li>
-                                           
-                                            <li class="menu-icon">
-                                                <a href="#">Shop</a>
-                                                <ul>
-                                                    <li><a asp-controller="Shop" asp-action="Index">Shop</a></li>
-                                                </ul>
-                                            </li>
+                                            <li>
+                                                <a asp-controller="Team" asp-action="Index">Team</a>
+                                             </li>
+                                             <li><a asp-controller="Shop" asp-action="Index">Shop</a>
+                                             </li>
+                                            
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </div>

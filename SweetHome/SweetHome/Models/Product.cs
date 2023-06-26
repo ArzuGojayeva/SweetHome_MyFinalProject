@@ -17,16 +17,13 @@ namespace SweetHome.Models
         public Status? Status { get; set; }  
         public int CityId { get; set; }
         public City? City { get; set; }
-        public ICollection<Aminities>? Aminities { get; set; }
-        [NotMapped]
-        public List<int> AminitieIds { get; set; }
         public int HomeTypeId { get; set; }
         public HomeType? HomeType { get; set; }
         public ICollection<ProductImage>? ProductImages { get; set; }
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
         [NotMapped]
-        public IFormFile ImageMain { get; set; } = null!;
+        public IFormFile? ImageMain { get; set; } 
         [NotMapped]
         public List<IFormFile>? Files { get; set; }
     }

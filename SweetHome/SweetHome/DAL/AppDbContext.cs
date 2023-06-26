@@ -14,7 +14,6 @@ namespace SweetHome.DAL
         public DbSet<Team> Teams { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<City> Cities { get; set; }
-        public DbSet<Aminities> Aminities { get; set; }
         public DbSet<HomeType> HomeTypes { get; set; }
         public DbSet<Status> Statuses { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }

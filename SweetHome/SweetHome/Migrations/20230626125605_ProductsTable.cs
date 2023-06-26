@@ -5,24 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SweetHome.Migrations
 {
-    public partial class CreatedAllTables : Migration
+    public partial class ProductsTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Aminities",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Icon = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Aminities", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -310,30 +296,6 @@ namespace SweetHome.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AminitiesProduct",
-                columns: table => new
-                {
-                    AminitiesId = table.Column<int>(type: "int", nullable: false),
-                    ProductsId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AminitiesProduct", x => new { x.AminitiesId, x.ProductsId });
-                    table.ForeignKey(
-                        name: "FK_AminitiesProduct_Aminities_AminitiesId",
-                        column: x => x.AminitiesId,
-                        principalTable: "Aminities",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AminitiesProduct_Products_ProductsId",
-                        column: x => x.ProductsId,
-                        principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ProductImages",
                 columns: table => new
                 {
@@ -353,11 +315,6 @@ namespace SweetHome.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AminitiesProduct_ProductsId",
-                table: "AminitiesProduct",
-                column: "ProductsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -432,9 +389,6 @@ namespace SweetHome.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AminitiesProduct");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -454,9 +408,6 @@ namespace SweetHome.Migrations
 
             migrationBuilder.DropTable(
                 name: "Sliders");
-
-            migrationBuilder.DropTable(
-                name: "Aminities");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

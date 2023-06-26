@@ -14,9 +14,20 @@
         {
             string uniquefile = Guid.NewGuid().ToString() + "_" + file.FileName;
             string path = Path.Combine(root, folder, uniquefile);
-            FileStream stream = new FileStream(path, FileMode.Create);
-            await file.CopyToAsync(stream);
+            using (FileStream stream = new FileStream(path, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
             return uniquefile;
+        }
+        public static void DeleteFile(this IFormFile file, string root,string folder ,string fileName)
+        {
+            string path = Path.Combine(root, folder, fileName);
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Delete(path);
+            }
+
         }
     }
 }

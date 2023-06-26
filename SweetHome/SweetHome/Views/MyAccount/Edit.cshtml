@@ -1,0 +1,89 @@
+﻿@using SweetHome.ViewModels;
+@using SweetHome.Models
+@model Product
+<div class="ltn__myaccount-tab-content-inner">
+    <form method="post" enctype="multipart/form-data">
+        <h6>Property Description</h6>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-item input-item-textarea ltn__custom-icon">
+                    <input asp-for="Name" placeholder="Title">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="input-item input-item-textarea ltn__custom-icon">
+                    <input asp-for="Description" placeholder="Description">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="input-item input-item-textarea ltn__custom-icon">
+                    <input asp-for="Price" placeholder="Price">
+                </div>
+            </div>
+        </div>
+        <h6>Select Categories</h6>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="input-item">
+                    <select asp-for="CategoryId" asp-items="new SelectList(ViewBag.Categories,nameof(Category.Id),nameof(Category.Name))"></select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="input-item">
+                    <select asp-for="CityId" asp-items="new SelectList(ViewBag.Cities,nameof(City.Id),nameof(City.Name))"></select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="input-item">
+                    <select asp-for="StatusId" asp-items="new SelectList(ViewBag.Status,nameof(Status.Id),nameof(Status.Name))"></select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="input-item">
+                    <select asp-for="HomeTypeId" asp-items="new SelectList(ViewBag.Type,nameof(HomeType.Id),nameof(HomeType.Name))"></select>
+                </div>
+            </div>
+        </div>
+        <h6>Listing Media</h6>
+        <div class="col-md-6">
+            <label asp-for="ImageMain">ImageMain</label>
+            <input asp-for="ImageMain" class="btn theme-btn-3 mb-10"><br>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Files">Files</label>
+            <input asp-for="Files" class="btn theme-btn-3 mb-10"><br>
+        </div>
+           <div class="col-lg-4 col-md-6">
+            <label asp-for="TeamId">Team</label>
+            <select asp-for="TeamId" asp-items="new SelectList(ViewBag.Team,nameof(Team.Id),nameof(Team.Name))"></select>
+        </div>
+        <h6>Listing Details</h6>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-item input-item-textarea ltn__custom-icon">
+                    <label asp-for="Room">Room</label>
+                    <input asp-for="Room" placeholder="Room">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-item input-item-textarea ltn__custom-icon">
+                    <label asp-for="HomeSize"></label>
+                    <input asp-for="HomeSize" placeholder="Area">
+                </div>
+            </div>
+            <div class="btn-wrapper text-center--- mt-30">
+                <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Submit Property</button>
+            </div>
+        </div>
+    </form>
+   <div class="d-flex mt-3">
+        @foreach(var item in Model.ProductImages.Where(x=>!x.IsMain)){
+            <form asp-action="DeleteImage" asp-route-id="@item.Id" asp-route-id="@Model.Id">
+                <img src="~/assets/img/product-3/@item.Image"/>
+                <div style="position:relative">
+                    <button type="submit" class="bg-danger text-white" style="position:absolute;right:1px;bottom:75px">x</button>
+                </div>
+            </form>
+       }
+    </div>
+</div>

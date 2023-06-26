@@ -71,10 +71,6 @@
                     <input asp-for="Product.HomeSize" placeholder="Area">
                 </div>
             </div>
-            <div class="row">
-                <label asp-for="Product.AminitieIds">Aminities</label>
-                <select asp-for="Product.AminitieIds" asp-items="new SelectList(ViewBag.Aminities,nameof(Aminities.Id),nameof(Aminities.Name))"></select>
-            </div>
             <div class="btn-wrapper text-center--- mt-30">
                 <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Submit Property</button>
             </div>
