@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SweetHome.DAL;
+using SweetHome.ViewModels;
 
 namespace SweetHome.Controllers
 {
@@ -14,7 +15,12 @@ namespace SweetHome.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            HomeVM homeVM = new HomeVM()
+            {
+                Abouts=_context.About.Take(4).ToList(),
+                Teams=_context.Teams.ToList(),
+            };
+            return View(homeVM);
         }
     }
 }

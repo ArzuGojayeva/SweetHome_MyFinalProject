@@ -18,6 +18,8 @@ namespace SweetHome.DAL
         public DbSet<Status> Statuses { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<About> About { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
     }
 }

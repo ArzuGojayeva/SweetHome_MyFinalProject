@@ -10,7 +10,7 @@ namespace SweetHome.Models
         public int Room { get; set; }
         public decimal Price { get; set; }
         public int HomeSize { get; set; }
-        public int TeamId { get; set; }
+        public int? TeamId { get; set; }
         public Team? Team { get; set; }
         public bool IsDeleted { get; set; }=false;
         public int StatusId { get; set; }

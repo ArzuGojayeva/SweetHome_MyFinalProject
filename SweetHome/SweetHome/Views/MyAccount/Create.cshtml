@@ -2,7 +2,7 @@
 @using SweetHome.Models
 @model SellerVM
 <div class="ltn__myaccount-tab-content-inner">
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" >
         <h6>Property Description</h6>
         <div class="row">
             <div class="col-md-12">
@@ -52,10 +52,6 @@
         <div class="col-md-6">
             <label asp-for="Product.Files">Files</label>
             <input asp-for="Product.Files" class="btn theme-btn-3 mb-10"><br>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <label asp-for="Product.TeamId">Team</label>
-            <select asp-for="Product.TeamId" asp-items="new SelectList(ViewBag.Team,nameof(Team.Id),nameof(Team.Name))"></select>
         </div>
         <h6>Listing Details</h6>
         <div class="row">

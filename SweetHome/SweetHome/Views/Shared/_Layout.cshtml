@@ -126,33 +126,16 @@
                                             <li>
                                                 <a asp-controller="Team" asp-action="Index">Team</a>
                                              </li>
-                                             <li><a asp-controller="Shop" asp-action="Index">Shop</a>
+                                             <li><a asp-controller="Shop" asp-action="Index" >Shop</a>
                                              </li>
                                             
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a asp-controller="ContactUs" asp-action="Index">Contact</a></li>
                                         </ul>
                                     </div>
                                 </nav>
                             </div>
                         </div>
                         <div class="col ltn__header-options ltn__header-options-2 mb-sm-20">
-                            <!-- header-search-1 -->
-                            <div class="header-search-wrap">
-                                <div class="header-search-1">
-                                    <div class="search-icon">
-                                        <i class="icon-search for-search-show"></i>
-                                        <i class="icon-cancel  for-search-close"></i>
-                                    </div>
-                                </div>
-                                <div class="header-search-1-form">
-                                    <form id="#" method="get" action="#">
-                                        <input type="text" name="search" value="" placeholder="Search here..." />
-                                        <button type="submit">
-                                            <span><i class="icon-search"></i></span>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
                             <!-- user-menu -->
                             <div class="ltn__drop-menu user-menu">
                                 <ul>
@@ -332,10 +315,7 @@
                             <div class="footer-menu">
                                 <ul>
                                     <li><a href="about.html">About</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="shop.html">All Products</a></li>
-                                    <li><a href="locations.html">Locations Map</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a asp-controller="Shop" asp-action="Index">All Products</a></li>
                                     <li><a href="contact.html">Contact us</a></li>
                                 </ul>
                             </div>
@@ -346,12 +326,8 @@
                             <h4 class="footer-title">Services</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="order-tracking.html">Order tracking</a></li>
                                     <li><a href="wishlist.html">Wish List</a></li>
-                                    <li><a href="login.html">Login</a></li>
                                     <li><a href="account.html">My account</a></li>
-                                    <li><a href="about.html">Terms & Conditions</a></li>
-                                    <li><a href="about.html">Promotional Offers</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -362,10 +338,18 @@
                             <div class="footer-menu">
                                 <ul>
                                     <li><a href="login.html">Login</a></li>
-                                    <li><a href="account.html">My account</a></li>
+                                        @if (member != null)
+                                        {
+                                            if (member.IsAgent == true)
+                                            {
+                                                <li><a asp-controller="MyAccount" asp-action="SellerProfile" asp-route-mail="@member.Email">My Account</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li><a asp-controller="MyAccount" asp-action="BuyerProfile">My Account</a></li>
+                                            }
+                                        }
                                     <li><a href="wishlist.html">Wish List</a></li>
-                                    <li><a href="order-tracking.html">Order tracking</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
                                     <li><a href="contact.html">Contact us</a></li>
                                 </ul>
                             </div>

@@ -19,7 +19,7 @@ namespace SweetHome.Controllers
             _userManager = userManager;
             _environment = environment;
         }
-        public async Task<IActionResult> SellerProfile(string mail, string name)
+        public async Task<IActionResult> SellerProfile(string mail,int page=1,int take=2)
         {
             ViewBag.Categories = await _context.Categories.ToListAsync();
             ViewBag.Cities = await _context.Cities.ToListAsync();
@@ -31,20 +31,25 @@ namespace SweetHome.Controllers
                 .Include(x => x.Products).ThenInclude(x => x.Category)
                 .Include(x => x.Products).ThenInclude(x => x.Status)
                 .Include(x => x.Products).ThenInclude(x => x.City)
-                .Include(x => x.Products).ThenInclude(x => x.HomeType)
+                .Include(x => x.Products).ThenInclude(x => x.HomeType).Skip((page - 1) * take).Take(take)
                 .FirstOrDefaultAsync(t => t.Email == mail);
-
             if (team == null)
             {
-                return NotFound();
+                return View();
             }
             SellerVM sellerVM = new SellerVM()
             {
-                Team = team,
-                Product = new Product(),
-
+                Team=team,
+                PageCount=GetPageCount(take),
+                CurrentPage=page,
+                Product=new Product()
             };
             return View(sellerVM);
+        }
+        public int GetPageCount(int take)
+        {
+            var count = _context.Products.Count();
+            return (int)Math.Ceiling((double)count / take);
         }
         public async Task<IActionResult> Create()
         {
@@ -81,6 +86,16 @@ namespace SweetHome.Controllers
                 return View();
             }
             if (product.HomeSize < 1)
+            {
+                ModelState.AddModelError("", "It is wrong");
+                return View();
+            }
+            if (product.Files==null)
+            {
+                ModelState.AddModelError("", "It is wrong");
+                return View();
+            }
+            if (product.ImageMain==null)
             {
                 ModelState.AddModelError("", "It is wrong");
                 return View();
@@ -123,23 +138,28 @@ namespace SweetHome.Controllers
                     Product = product
                 });
             }
-            Product prd = new Product
+            var user=await _userManager.FindByNameAsync(User.Identity.Name);
+            if (user.IsAgent == true)
             {
-                Name = product.Name,
-                Description = product.Description,
-                Price = product.Price,
-                Room = product.Room,
-                HomeSize = product.HomeSize,
-                CityId = product.CityId,
-                HomeTypeId = product.HomeTypeId,
-                StatusId = product.StatusId,
-                TeamId = product.TeamId,
-                CategoryId = product.CategoryId,
-                ProductImages=product.ProductImages,
-            };
+                var team = await _context.Teams.FirstOrDefaultAsync(x => x.Email == user.Email);
 
+                Product prd = new Product
+                {
+                    Name = product.Name,
+                    Description = product.Description,
+                    Price = product.Price,
+                    Room = product.Room,
+                    HomeSize = product.HomeSize,
+                    CityId = product.CityId,
+                    HomeTypeId = product.HomeTypeId,
+                    StatusId = product.StatusId,
+                    TeamId = team.Id,
+                    CategoryId = product.CategoryId,
+                    ProductImages = product.ProductImages,
+                };
             await _context.Products.AddAsync(prd);
             await _context.SaveChangesAsync();
+            }
             return RedirectToAction("Index", "Home");
         }
         public async Task<IActionResult> Edit(int id)
@@ -238,7 +258,7 @@ namespace SweetHome.Controllers
             productImage.ImageFile.DeleteFile(_environment.WebRootPath,"assets/img/product-3", productImage.Image);
             _context.ProductImages.Remove(productImage);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Edit", new { id = pId });
+            return RedirectToAction("Index","Home", new { id = pId });
         }
         public async Task<IActionResult> Delete(int id)
         {
