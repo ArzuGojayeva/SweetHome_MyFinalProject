@@ -6,7 +6,5 @@ namespace SweetHome.ViewModels
     {
         public Team? Team { get; set; }
         public Product? Product { get;set; }
-        public int PageCount { get; set; }
-        public int CurrentPage { get; set; }
     }
 }

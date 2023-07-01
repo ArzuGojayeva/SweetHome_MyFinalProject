@@ -1,0 +1,9 @@
+﻿@using SweetHome.Models;
+@using SweetHome.ViewModels;
+@model SearchVM
+<div class="ltn__search-widget mb-30">
+    <form asp-controller="Shop" asp-action="Search">
+        <input asp-for="ProdName" placeholder="Search your keyword...">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</div>

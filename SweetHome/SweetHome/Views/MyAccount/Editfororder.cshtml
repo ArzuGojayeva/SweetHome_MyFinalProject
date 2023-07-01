@@ -1,0 +1,16 @@
+﻿@using SweetHome.Models;
+@model Order
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Basic form elements</h4>
+            <p class="card-description">
+                Basic form elements
+            </p>
+            <a asp-controller="MyAccount" asp-action="Accept" asp-route-id="@Model.Id" >Accept
+            </a>
+            <a asp-controller="MyAccount" asp-action="Reject" asp-route-id="@Model.Id">Reject
+            </a>
+        </div>
+    </div>
+</div>

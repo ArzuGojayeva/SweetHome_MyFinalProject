@@ -1,0 +1,47 @@
+﻿@using SweetHome.Models;
+@model List<Order>
+@{
+    int count = 1;
+}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Order</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@(count++)</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.Price</td>
+                    <td>@item.PurchasedAt</td>
+                    <td>
+                        @if (item.Status == null)
+                        {
+                            <p>Pending</p>
+                        }
+                        else if (item.Status == true)
+                        {
+                            <p>Accept</p>
+
+                        }
+                        else
+                        {
+                            <p>Reject</p>
+
+                        }
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -199,7 +199,6 @@ namespace SweetHome.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsAgent")
@@ -322,6 +321,46 @@ namespace SweetHome.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("HomeTypes");
+                });
+
+            modelBuilder.Entity("SweetHome.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PurchasedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool?>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("TeamId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("TeamId");
+
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("SweetHome.Models.Product", b =>
@@ -527,6 +566,27 @@ namespace SweetHome.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SweetHome.Models.Order", b =>
+                {
+                    b.HasOne("SweetHome.Models.AppUser", "AppUser")
+                        .WithMany("Orders")
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("SweetHome.Models.Product", "Product")
+                        .WithMany("Orders")
+                        .HasForeignKey("ProductId");
+
+                    b.HasOne("SweetHome.Models.Team", "Team")
+                        .WithMany("Orders")
+                        .HasForeignKey("TeamId");
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Team");
+                });
+
             modelBuilder.Entity("SweetHome.Models.Product", b =>
                 {
                     b.HasOne("SweetHome.Models.Category", "Category")
@@ -579,6 +639,11 @@ namespace SweetHome.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("SweetHome.Models.AppUser", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
             modelBuilder.Entity("SweetHome.Models.Category", b =>
                 {
                     b.Navigation("Products");
@@ -596,6 +661,8 @@ namespace SweetHome.Migrations
 
             modelBuilder.Entity("SweetHome.Models.Product", b =>
                 {
+                    b.Navigation("Orders");
+
                     b.Navigation("ProductImages");
                 });
 
@@ -606,6 +673,8 @@ namespace SweetHome.Migrations
 
             modelBuilder.Entity("SweetHome.Models.Team", b =>
                 {
+                    b.Navigation("Orders");
+
                     b.Navigation("Products");
                 });
 #pragma warning restore 612, 618

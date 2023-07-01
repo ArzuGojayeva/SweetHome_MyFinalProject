@@ -6,6 +6,8 @@ namespace SweetHome.Models
     {
         public string? FullName { get; set; }
         public bool IsAgent { get; set; } =false;
-        public string Image { get; set; }
+        public string? Image { get; set; }
+        public List<Order>? Orders { get; set; }
+
     }
 }

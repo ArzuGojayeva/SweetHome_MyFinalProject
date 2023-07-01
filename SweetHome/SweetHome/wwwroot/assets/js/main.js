@@ -47,7 +47,6 @@
 
 (function($) {
   "use strict";
-
     jQuery(document).ready(function(){
       
         /* --------------------------------------------------------
@@ -86,6 +85,22 @@
                 $mobileMenuToggle.find('a').removeClass('close');
             });
         })();
+        $(document).on("click", "#btn_load", function () {
+            let proCount = $(".product").children().length
+            $.ajax({
+                url: 'Shop/LoadProduct',
+                method: 'GET',
+                data: {
+                    skip: proCount
+                },
+                success: function (result) {
+                    $(".product").append(result)
+                },
+                error: function (result) {
+                    console.log(result)
+                }
+            })
+        })
 
         /* ------------------------------------
             Utilize Menu

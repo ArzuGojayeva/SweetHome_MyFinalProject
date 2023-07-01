@@ -17,12 +17,30 @@
             <div class="col-lg-6 offset-lg-3">
                 <div class="account-login-inner">
                     <form asp-action="Register" method="post" class="ltn__form-box contact-form-box" enctype="multipart/form-data">
-                        <input asp-for="Name">
-                        <input asp-for="Email">
-                        <input asp-for="ImageFile">
-                        <input asp-for="Phone">
-                        <input asp-for="Password">
-                        <input asp-for="ConfirmPassword">
+                        <div class="form-group">
+                            <label asp-for="Name"></label>
+                            <input asp-for="Name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ImageFile"></label>
+                            <input asp-for="ImageFile" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Phone"></label>
+                            <input asp-for="Phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input asp-for="Password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword"></label>
+                            <input asp-for="ConfirmPassword" class="form-control">
+                        </div>
                         <label class="checkbox-inline">
                             <input asp-for="IsAgent">
                            Is Agent?

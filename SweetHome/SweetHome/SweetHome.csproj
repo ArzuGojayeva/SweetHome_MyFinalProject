@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\EstateAdmin\Models\" />
+    <Folder Include="Views\Order\" />
     <Folder Include="wwwroot\assets\img\buyer\" />
   </ItemGroup>
 

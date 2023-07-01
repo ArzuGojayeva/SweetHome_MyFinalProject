@@ -1,0 +1,53 @@
+﻿@{
+    int count = 1;
+}
+@using SweetHome.Models;
+@model Team
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Order</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Edit</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Orders)
+            {
+                <tr>
+                    <td>@(count++)</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.Price</td>
+                    <td>@item.PurchasedAt</td>
+                    <td>
+                        @if (item.Status == null)
+                        {
+                            <p>Pending</p>
+                        }
+                        else if(item.Status == true)
+                        {
+                            <p>Accept</p>
+
+                        }
+                        else
+                        {
+                            <p>Reject</p>
+
+                        }
+                    </td>
+                    <td>
+                        <a asp-controller="MyAccount" asp-action="Editfororder" asp-route-id="@item.Id"><button type="button" class="btn btn-primary">Edit</button></a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

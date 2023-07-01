@@ -8,5 +8,6 @@
         public string? Email { get; set; }
         public string? Image { get; set; }
         public List<Product>? Products{ get; set; }
+        public List<Order>? Orders { get; set;}
     }
 }

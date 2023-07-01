@@ -19,7 +19,7 @@ namespace SweetHome.Controllers
             _userManager = userManager;
             _environment = environment;
         }
-        public async Task<IActionResult> SellerProfile(string mail,int page=1,int take=2)
+        public async Task<IActionResult> SellerProfile(string mail)
         {
             ViewBag.Categories = await _context.Categories.ToListAsync();
             ViewBag.Cities = await _context.Cities.ToListAsync();
@@ -31,7 +31,7 @@ namespace SweetHome.Controllers
                 .Include(x => x.Products).ThenInclude(x => x.Category)
                 .Include(x => x.Products).ThenInclude(x => x.Status)
                 .Include(x => x.Products).ThenInclude(x => x.City)
-                .Include(x => x.Products).ThenInclude(x => x.HomeType).Skip((page - 1) * take).Take(take)
+                .Include(x => x.Products).ThenInclude(x => x.HomeType)
                 .FirstOrDefaultAsync(t => t.Email == mail);
             if (team == null)
             {
@@ -40,8 +40,6 @@ namespace SweetHome.Controllers
             SellerVM sellerVM = new SellerVM()
             {
                 Team=team,
-                PageCount=GetPageCount(take),
-                CurrentPage=page,
                 Product=new Product()
             };
             return View(sellerVM);
@@ -287,6 +285,72 @@ namespace SweetHome.Controllers
                 Phone = user.PhoneNumber
             };
             return View(userVM);
+        }
+        public async Task<IActionResult> OrderBuyer()
+        {
+            AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
+            List<Order> orders = await _context.Order.Where(x => x.AppUserId == user.Id).ToListAsync();
+
+            return View(orders);
+        }
+
+        public async Task<IActionResult> OrderSeller()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            if (user.IsAgent == true)
+            {
+                var team = await _context.Teams.Include(x => x.Orders).FirstOrDefaultAsync(x => x.Email == user.Email);
+            return View(team);
+            }
+            return View();
+        }
+
+        public async Task<IActionResult> Editfororder(int? id)
+        {
+            return View(await _context.Order.Include(x=>x.Team).Include(x=>x.AppUser).FirstOrDefaultAsync(x=>x.Id==id));
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Editfororder(Order order)
+        {
+            if (!ModelState.IsValid) { return View(); }
+            Order? exist = await _context.Order.Include(x => x.Team).Include(x => x.AppUser).FirstOrDefaultAsync(x => x.Id == order.Id);
+            if (exist == null)
+            {
+                ModelState.AddModelError("", "Error");
+                return View();
+            }
+            exist.Status = order.Status;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult>Accept(int id)
+        {
+            if (!ModelState.IsValid) { return View(); }
+            Order? exist = await _context.Order.Include(x => x.Team).Include(x => x.AppUser).FirstOrDefaultAsync(x => x.Id ==id);
+            if (exist == null)
+            {
+                ModelState.AddModelError("", "Error");
+                return View();
+            }
+            exist.Status = true;
+            await _context.SaveChangesAsync();
+            return RedirectToAction("OrderSeller");
+        }
+        public async Task<IActionResult> Reject(int id)
+        {
+            if (!ModelState.IsValid) { return View(); }
+            Order? exist = await _context.Order.Include(x => x.Team).Include(x => x.AppUser).FirstOrDefaultAsync(x => x.Id ==id);
+            if (exist == null)
+            {
+                ModelState.AddModelError("", "Error");
+                return View();
+            }
+            exist.Status = false;
+            await _context.SaveChangesAsync();
+            return RedirectToAction("OrderSeller");
         }
     }
 }

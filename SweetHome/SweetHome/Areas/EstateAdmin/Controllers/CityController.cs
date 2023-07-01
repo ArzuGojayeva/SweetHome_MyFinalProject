@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SweetHome.DAL;
 using SweetHome.Models;
@@ -6,6 +7,7 @@ using SweetHome.Models;
 namespace SweetHome.Areas.EstateAdmin.Controllers
 {
     [Area("EstateAdmin")]
+    [Authorize(Roles ="admin")]
     public class CityController : Controller
     {
         private readonly AppDbContext _context;

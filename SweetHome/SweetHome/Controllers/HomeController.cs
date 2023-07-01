@@ -24,5 +24,19 @@ namespace SweetHome.Controllers
             };    
             return View(homeVM);
         }
+        public async Task<IActionResult> Detail(int id)
+        {
+            var prd = await _context.Products.Where(x => x.IsDeleted == false).Include(x => x.Team).Include(x => x.ProductImages).
+                Include(x => x.Category).Include(x => x.Status).Include(x => x.HomeType).Include(x => x.City).FirstOrDefaultAsync(x => x.Id == id);
+            return View(prd);
+        }
+        public async Task<IActionResult> Filter(FilterVM filtervm)
+        {
+            var category = await _context.Products.
+                Where(x => x.IsDeleted == false && x.CategoryId==filtervm.CategoryId &&x.CityId==filtervm.CityId && x.HomeTypeId==filtervm.HomeTypeId).
+                Include(x => x.Status).Include(x => x.ProductImages).
+            Include(x => x.Category).Include(x => x.City).Include(x => x.HomeType).Include(x => x.Team).ToListAsync();
+            return View(category);
+        }
     }
 }

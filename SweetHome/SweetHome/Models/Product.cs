@@ -26,5 +26,7 @@ namespace SweetHome.Models
         public IFormFile? ImageMain { get; set; } 
         [NotMapped]
         public List<IFormFile>? Files { get; set; }
+        public List<Order>? Orders { get; set; }
+
     }
 }

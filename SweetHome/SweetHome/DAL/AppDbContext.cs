@@ -20,6 +20,7 @@ namespace SweetHome.DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<About> About { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Order> Order { get; set; }
 
     }
 }
