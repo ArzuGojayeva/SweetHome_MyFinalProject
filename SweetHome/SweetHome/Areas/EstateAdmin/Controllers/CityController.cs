@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SweetHome.DAL;
 using SweetHome.Models;
+using SweetHome.ViewModels;
 
 namespace SweetHome.Areas.EstateAdmin.Controllers
 {
@@ -17,9 +19,21 @@ namespace SweetHome.Areas.EstateAdmin.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public  IActionResult Index(int take = 2,int page=1)
         {
-            return View(_context.Cities.ToList());
+            var cities =_context.Cities.Skip((page-1)*take).Take(take).ToList();
+            PaginateVM<City> paginateVM = new PaginateVM<City>()
+            {
+                Items = cities,
+                PageCount = GetPageCount(take),
+                CurrentPage = page,
+            };
+            return View(paginateVM);
+        }
+        public int GetPageCount(int take)
+        {
+            var citycount = _context.Cities.Count();
+            return (int)Math.Ceiling((double)citycount / take);
         }
         public IActionResult Create()
         {

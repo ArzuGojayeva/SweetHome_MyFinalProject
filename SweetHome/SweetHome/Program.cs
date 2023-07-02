@@ -9,6 +9,7 @@ builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configur
 builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
 {
     opt.Password.RequireNonAlphanumeric = false;
+    opt.SignIn.RequireConfirmedEmail =true;
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
 var app = builder.Build();
 

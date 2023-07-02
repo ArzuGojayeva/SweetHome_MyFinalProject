@@ -44,11 +44,6 @@ namespace SweetHome.Controllers
             };
             return View(sellerVM);
         }
-        public int GetPageCount(int take)
-        {
-            var count = _context.Products.Count();
-            return (int)Math.Ceiling((double)count / take);
-        }
         public async Task<IActionResult> Create()
         {
             ViewBag.Categories = await _context.Categories.ToListAsync();

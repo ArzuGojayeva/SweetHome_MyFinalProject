@@ -4,7 +4,8 @@ using SweetHome.DAL;
 using SweetHome.Models;
 using SweetHome.Utilities;
 using SweetHome.ViewModels.Account;
-
+using System.Net;
+using System.Net.Mail;
 
 namespace SweetHome.Controllers
 {
@@ -82,8 +83,24 @@ namespace SweetHome.Controllers
             {
                 await _userManager.AddToRoleAsync(newUser, "buyer");
             }
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+            var confirmationUrl = Url.Action("ConfirmEmail", "Account",
+                new { userId = newUser.Id, token = token }, Request.Scheme);
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("arzu.gojayeva03@gmail.com", "lsmbbubdiuboddaw"),
+                EnableSsl = true,
+            };
+            MailMessage mailMessage = new MailMessage("arzu.gojayeva03@gmail.com", newUser.Email, "Email Confirmation", $@"
+<a href={confirmationUrl}>Verify Email</a>
+");
+            mailMessage.IsBodyHtml = true;
+
+            smtpClient.Send(mailMessage);
             return RedirectToAction("Login", "Account");
         }
+
         public IActionResult Login()
         {
             return View();
@@ -156,6 +173,19 @@ namespace SweetHome.Controllers
             //await _signInManager.SignInAsync(user, false);
             return Json("Okay");
 
+        }
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) return NotFound();
+
+            var confirm = await _userManager.ConfirmEmailAsync(user, token);
+            if (confirm.Succeeded)
+            {
+                await _signInManager.SignInAsync(user, false);
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
         }
     }
 }

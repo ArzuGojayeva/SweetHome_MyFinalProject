@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ckvOIwWvqytkaqxT0QM90t9u9fC68kjO1n1kdTaRuUU=",
+  "Hash": "2ZlGNn51dSwuF8/iQrrFkQr03on5wMqVy/foHzmKYqc=",
   "Source": "SweetHome",
   "BasePath": "_content/SweetHome",
   "Mode": "Default",
@@ -4896,6 +4896,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\icons\\12.png"
     },
     {
+      "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\icons\\1d18c599-53fd-4c6a-832b-9c8adaaaa2ea_10.png",
+      "SourceId": "SweetHome",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\",
+      "BasePath": "_content/SweetHome",
+      "RelativePath": "assets/img/icons/1d18c599-53fd-4c6a-832b-9c8adaaaa2ea_10.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\icons\\1d18c599-53fd-4c6a-832b-9c8adaaaa2ea_10.png"
+    },
+    {
       "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\icons\\20917c1e-1b00-4cc6-bf26-c877bdd88834_12.png",
       "SourceId": "SweetHome",
       "SourceType": "Discovered",
@@ -4945,6 +4962,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\icons\\45413af4-c0a7-419b-bbe0-9adaf57720b0_11.png"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\icons\\a0a589e1-fe01-4643-80d9-7c55030bcc60_11.png",
+      "SourceId": "SweetHome",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\",
+      "BasePath": "_content/SweetHome",
+      "RelativePath": "assets/img/icons/a0a589e1-fe01-4643-80d9-7c55030bcc60_11.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\icons\\a0a589e1-fe01-4643-80d9-7c55030bcc60_11.png"
     },
     {
       "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\icons\\a862014e-5350-4fd4-8a33-7ae8400828ab_12.png",
@@ -5013,6 +5047,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\icons\\car.png"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\icons\\d0f61c62-4e70-4601-8958-7e3026349747_12.png",
+      "SourceId": "SweetHome",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\",
+      "BasePath": "_content/SweetHome",
+      "RelativePath": "assets/img/icons/d0f61c62-4e70-4601-8958-7e3026349747_12.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\icons\\d0f61c62-4e70-4601-8958-7e3026349747_12.png"
     },
     {
       "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\icons\\ddd0de1f-7d09-4710-bc08-33ae3a90da14_11.png",
@@ -8007,6 +8058,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\product-3\\8d0e4bfa-a9cf-49ec-9d1a-9608a6c545b9_face3.jpg"
     },
     {
+      "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\8f5c18a4-4946-44c0-b74f-6ced4ae38624_4.jpg",
+      "SourceId": "SweetHome",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\",
+      "BasePath": "_content/SweetHome",
+      "RelativePath": "assets/img/product-3/8f5c18a4-4946-44c0-b74f-6ced4ae38624_4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\product-3\\8f5c18a4-4946-44c0-b74f-6ced4ae38624_4.jpg"
+    },
+    {
       "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\90927fae-bb34-416b-94f7-3abb2b1afc39_7.jpg",
       "SourceId": "SweetHome",
       "SourceType": "Discovered",
@@ -9095,6 +9163,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\product-3\\e2933db3-f97e-45eb-b563-6739ab11d7af_1.jpg"
     },
     {
+      "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\e36ea4e9-9f35-41f6-b1aa-9ac57a740f68_1.jpg",
+      "SourceId": "SweetHome",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\",
+      "BasePath": "_content/SweetHome",
+      "RelativePath": "assets/img/product-3/e36ea4e9-9f35-41f6-b1aa-9ac57a740f68_1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\product-3\\e36ea4e9-9f35-41f6-b1aa-9ac57a740f68_1.jpg"
+    },
+    {
       "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\e4d8d74e-a923-4763-9331-042f357323fb_face13.jpg",
       "SourceId": "SweetHome",
       "SourceType": "Discovered",
@@ -9246,6 +9331,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\product-3\\ee29d2c0-404c-44e8-9739-ec9f7026d391_5.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\ee588349-94af-4451-87f6-e108acde93cd_5.jpg",
+      "SourceId": "SweetHome",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\",
+      "BasePath": "_content/SweetHome",
+      "RelativePath": "assets/img/product-3/ee588349-94af-4451-87f6-e108acde93cd_5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\product-3\\ee588349-94af-4451-87f6-e108acde93cd_5.jpg"
     },
     {
       "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\ef36c40a-b1d7-479f-8547-a515f4af7198_face12.jpg",
@@ -9979,6 +10081,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\2eb9aca7-c3d8-4439-a087-2201262b8e66_21.png"
     },
     {
+      "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\slider\\335290c4-8ef5-407e-914b-388668eaaa17_21.png",
+      "SourceId": "SweetHome",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\",
+      "BasePath": "_content/SweetHome",
+      "RelativePath": "assets/img/slider/335290c4-8ef5-407e-914b-388668eaaa17_21.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\335290c4-8ef5-407e-914b-388668eaaa17_21.png"
+    },
+    {
       "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\slider\\3891c1ce-6175-4071-be3a-216624f9f910_21.png",
       "SourceId": "SweetHome",
       "SourceType": "Discovered",
@@ -10215,6 +10334,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\64.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\slider\\7a5ea065-1311-4eeb-9992-ff017e4dcab5_21.png",
+      "SourceId": "SweetHome",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\",
+      "BasePath": "_content/SweetHome",
+      "RelativePath": "assets/img/slider/7a5ea065-1311-4eeb-9992-ff017e4dcab5_21.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\slider\\7a5ea065-1311-4eeb-9992-ff017e4dcab5_21.png"
     },
     {
       "Identity": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\slider\\a36982e4-e725-42ed-83f8-26337400c7db_21.png",

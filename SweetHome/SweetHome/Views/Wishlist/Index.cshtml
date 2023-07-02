@@ -1,0 +1,52 @@
+﻿@{
+    int count = 1;
+}
+@using SweetHome.Models;
+@using SweetHome.ViewModels;
+@model List<WishlistItemVM>
+<div class="ltn__myaccount-tab-content-inner">
+    <div class="ltn__my-properties-table table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Wishlist</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model){
+                <tr>
+                    <td>
+                        @(count++)
+                    </td>
+                    <td class="ltn__my-properties-img">
+                        <a href="product-details.html"><img src="~/assets/img/product-3/@item.Image" alt="#"></a>
+                    </td>
+                    <td>@item.Name</td>
+                    <td>$@item.Price</td>
+                    <td>
+                            <a asp-action="deletewishlist" asp-controller="wishlist" asp-route-id="@item.Id"><button type="button" class="btn btn-danger">Delete</button></a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="ltn__pagination-area text-center">
+        <div class="ltn__pagination">
+            <ul>
+                <li><a href="#"><i class="fas fa-angle-double-left"></i></a></li>
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">10</a></li>
+                <li><a href="#"><i class="fas fa-angle-double-right"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

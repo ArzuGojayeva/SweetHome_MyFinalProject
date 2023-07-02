@@ -1,4 +1,10 @@
-﻿@using SweetHome.ViewModels;
+﻿@inject UserManager<AppUser> usermanager
+@{
+    AppUser member = User.Identity.IsAuthenticated ? usermanager.Users.FirstOrDefault(x => x.UserName == User.Identity.Name) : null;
+}
+@using Microsoft.AspNetCore.Identity;
+@using SweetHome.Models;
+@using SweetHome.ViewModels;
 @model HomeVM
 <!-- SLIDER AREA START (slider-3) -->
 <div class="ltn__slider-area ltn__slider-3  section-bg-1">
@@ -18,7 +24,7 @@
                                         <p>@item.Description</p>
                                     </div>
                                     <div class="btn-wrapper animated">
-                                        <a href="about.html" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
+                                        <a asp-controller="Shop" asp-action="Index" class="theme-btn-1 btn btn-effect-1">Go to Shop</a>
                                     </div>
                                 </div>
                             </div>
@@ -114,215 +120,84 @@
             </div>
         </div>
         <div class="row ltn__product-slider-item-four-active-full-width slick-arrow-1">
-            @foreach(var item in Model.Products){
-            <!-- ltn__product-item -->
-            <div class="col-lg-12">
-                <div class="ltn__product-item ltn__product-item-4 text-center---">
-                    <div class="product-img">
+            @foreach (var item in Model.Products)
+            {
+                <!-- ltn__product-item -->
+                <div class="col-lg-12">
+                    <div class="ltn__product-item ltn__product-item-4 text-center---">
+                        <div class="product-img">
                             <a href="product-details.html"><img src="~/assets/img/product-3/@(item.ProductImages.Where(x=>x.IsMain==true).FirstOrDefault()?.Image)" alt="#"></a>
-                        <div class="product-badge">
-                            <ul>
-                                <li class="sale-badge bg-green">@item.Category.Name</li>
-                            </ul>
-                        </div>
-                        <div class="product-img-location-gallery">
-                            <div class="product-img-location">
+                            <div class="product-badge">
                                 <ul>
-                                    <li>
-                                        <a><i class="flaticon-pin"></i>@item.City.Name</a>
-                                    </li>
+                                    <li class="sale-badge bg-green">@item.Category.Name</li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">
-                            <span>$@item.Price<label></label></span>
-                        </div>
-                        <h2 class="product-title"><a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></h2>
-                        <div class="product-description">
-                            <p>
-                               @item.Description
-                            </p>
-                        </div>
-                        <ul class="ltn__list-item-2 ltn__list-item-2-before">
-                            <li>
-                                <span>@item.Room <i class="flaticon-bed"></i></span>
-                                Room
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="product-info-bottom">
-                        <div class="real-estate-agent">
-                            <div class="agent-img">
-                                    <a asp-controller="Team" asp-action="Detail" asp-route-id="@item.Team.Id"><img src="~/assets/img/team/@item.Team.Image" alt="#"></a>
-                            </div>
-                            <div class="agent-brief">
-                                <h6><a asp-controller="Team" asp-action="Detail" asp-route-id="@item.Team.Id">@item.Team.Name</a></h6>
-                                <small>Estate Agents</small>
+                            <div class="product-img-location-gallery">
+                                <div class="product-img-location">
+                                    <ul>
+                                        <li>
+                                            <a><i class="flaticon-pin"></i>@item.City.Name</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="product-hover-action">
-                            <ul>
+                        <div class="product-info">
+                            <div class="product-price">
+                                <span>$@item.Price<label></label></span>
+                            </div>
+                            <h2 class="product-title"><a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></h2>
+                            <div class="product-description">
+                                <p>
+                                    @item.Description
+                                </p>
+                            </div>
+                            <ul class="ltn__list-item-2 ltn__list-item-2-before">
                                 <li>
-                                    <a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-                                        <i class="flaticon-heart-1"></i>
-                                    </a>
+                                    <span>@item.Room <i class="flaticon-bed"></i></span>
+                                    Room
                                 </li>
                             </ul>
                         </div>
+                        <div class="product-info-bottom">
+                            <div class="real-estate-agent">
+                                <div class="agent-img">
+                                    <a asp-controller="Team" asp-action="Detail" asp-route-id="@item.Team.Id"><img src="~/assets/img/team/@item.Team.Image" alt="#"></a>
+                                </div>
+                                <div class="agent-brief">
+                                    <h6><a asp-controller="Team" asp-action="Detail" asp-route-id="@item.Team.Id">@item.Team.Name</a></h6>
+                                </div>
+                            </div>
+                            <div class="product-hover-action">
+                                @if (member != null)
+                                {
+                                    if (member.IsAgent == false)
+                                    {
+                                        <ul>
+                                            <li>
+                                                <form asp-controller="Wishlist" asp-action="addwishlist" asp-route-id="@item.Id" method="post">
+                                                    <button type="submit"><i class="flaticon-heart-1"></i></button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form asp-controller="Order" asp-action="CheckOut" asp-route-teamid="@item.Team.Id" asp-route-id="@item.Id" method="post">
+                                                    <button type="submit"><i class="flaticon-add"></i></button>
+                                                </form>
+                                            </li>
+                                        </ul>
+
+                                    }
+                                }
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
             }
             <!--  -->
         </div>
     </div>
 </div>
 <!-- PRODUCT SLIDER AREA END -->
-<!-- CATEGORY AREA START -->
-<div class="ltn__category-area section-bg-1-- ltn__primary-bg before-bg-1 bg-image bg-overlay-theme-black-5--0 pt-115 pb-90 d-none" data-bs-bg="img/bg/5.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title-area ltn__section-title-2 text-center">
-                    <h1 class="section-title white-color">Top Categories</h1>
-                </div>
-            </div>
-        </div>
-        <div class="row ltn__category-slider-active slick-arrow-1">
-            <div class="col-12">
-                <div class="ltn__category-item ltn__category-item-4 text-center">
-                    <div class="ltn__category-item-img">
-                        <a href="shop.html">
-                            <i class="flaticon-car"></i>
-                        </a>
-                    </div>
-                    <div class="ltn__category-item-name">
-                        <h4><a href="shop.html">Parking Space</a></h4>
-                    </div>
-                    <div class="ltn__category-item-btn">
-                        <a href="shop.html"><i class="flaticon-right-arrow"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="ltn__category-item ltn__category-item-4 text-center">
-                    <div class="ltn__category-item-img">
-                        <a href="shop.html">
-                            <i class="flaticon-car"></i>
-                        </a>
-                    </div>
-                    <div class="ltn__category-item-name">
-                        <h4><a href="shop.html">Parking Space</a></h4>
-                    </div>
-                    <div class="ltn__category-item-btn">
-                        <a href="shop.html"><i class="flaticon-right-arrow"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="ltn__category-item ltn__category-item-4 text-center">
-                    <div class="ltn__category-item-img">
-                        <a href="shop.html">
-                            <i class="flaticon-car"></i>
-                        </a>
-                    </div>
-                    <div class="ltn__category-item-name">
-                        <h4><a href="shop.html">Parking Space</a></h4>
-                    </div>
-                    <div class="ltn__category-item-btn">
-                        <a href="shop.html"><i class="flaticon-right-arrow"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="ltn__category-item ltn__category-item-4 text-center">
-                    <div class="ltn__category-item-img">
-                        <a href="shop.html">
-                            <i class="flaticon-car"></i>
-                        </a>
-                    </div>
-                    <div class="ltn__category-item-name">
-                        <h4><a href="shop.html">Parking Space</a></h4>
-                    </div>
-                    <div class="ltn__category-item-btn">
-                        <a href="shop.html"><i class="flaticon-right-arrow"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="ltn__category-item ltn__category-item-4 text-center">
-                    <div class="ltn__category-item-img">
-                        <a href="shop.html">
-                            <i class="flaticon-car"></i>
-                        </a>
-                    </div>
-                    <div class="ltn__category-item-name">
-                        <h4><a href="shop.html">Parking Space</a></h4>
-                    </div>
-                    <div class="ltn__category-item-btn">
-                        <a href="shop.html"><i class="flaticon-right-arrow"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="ltn__category-item ltn__category-item-4 text-center">
-                    <div class="ltn__category-item-img">
-                        <a href="shop.html">
-                            <i class="flaticon-car"></i>
-                        </a>
-                    </div>
-                    <div class="ltn__category-item-name">
-                        <h4><a href="shop.html">Parking Space</a></h4>
-                    </div>
-                    <div class="ltn__category-item-btn">
-                        <a href="shop.html"><i class="flaticon-right-arrow"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- CATEGORY AREA END -->
-<!-- BRAND LOGO AREA START -->
-<div class="ltn__brand-logo-area ltn__brand-logo-1 section-bg-1 pt-290 pb-110 plr--9 d-none">
-    <div class="container-fluid">
-        <div class="row ltn__brand-logo-active">
-            <div class="col-lg-12">
-                <div class="ltn__brand-logo-item">
-                    <img src="~/assets/img/brand-logo/1.png" alt="Brand Logo">
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="ltn__brand-logo-item">
-                    <img src="~/assets/img/brand-logo/2.png" alt="Brand Logo">
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="ltn__brand-logo-item">
-                    <img src="~/assets/img/brand-logo/3.png" alt="Brand Logo">
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="ltn__brand-logo-item">
-                    <img src="~/assets/img/brand-logo/4.png" alt="Brand Logo">
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="ltn__brand-logo-item">
-                    <img src="~/assets/img/brand-logo/5.png" alt="Brand Logo">
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="ltn__brand-logo-item">
-                    <img src="~/assets/img/brand-logo/3.png" alt="Brand Logo">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- BRAND LOGO AREA END -->
 <!-- CALL TO ACTION START (call-to-action-6) -->
 <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">
     <div class="container">
@@ -334,7 +209,7 @@
                         <p>We can help you realize your dream of a new home</p>
                     </div>
                     <div class="btn-wrapper">
-                        <a class="btn btn-effect-3 btn-white" href="contact.html">Explore Properties <i class="icon-next"></i></a>
+                        <a class="btn btn-effect-3 btn-white" asp-controller="ContactUs" asp-action="Index">Explore Properties <i class="icon-next"></i></a>
                     </div>
                 </div>
             </div>
