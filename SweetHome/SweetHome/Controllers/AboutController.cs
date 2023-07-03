@@ -17,7 +17,6 @@ namespace SweetHome.Controllers
         {
             HomeVM homeVM = new HomeVM()
             {
-                Abouts=_context.About.Take(4).ToList(),
                 Teams=_context.Teams.ToList(),
             };
             return View(homeVM);
