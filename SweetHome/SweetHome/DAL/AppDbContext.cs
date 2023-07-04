@@ -21,6 +21,9 @@ namespace SweetHome.DAL
         public DbSet<About> About { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Order> Order { get; set; }
+        public DbSet<Faq> Faq { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Settings> Settings { get; set; }
 
     }
 }

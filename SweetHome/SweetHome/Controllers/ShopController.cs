@@ -14,7 +14,7 @@ namespace SweetHome.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index(int take=3,int page=1)
+        public async Task<IActionResult> Index(int take=6,int page=1)
         {
             var products = await _context.Products.Where(x => x.IsDeleted == false).Include(x => x.Status).Include(x => x.ProductImages).
             Include(x => x.Category).Include(x => x.City).Include(x => x.HomeType).Include(x => x.Team).OrderByDescending(x => x.Id).Skip((page-1)*take).Take(take).ToListAsync();
@@ -32,7 +32,7 @@ namespace SweetHome.Controllers
             return (int)Math.Ceiling((double)procount / take);
         }
       
-        public async Task<IActionResult> Search(SearchVM searchVM,int take=3,int page=1)
+        public async Task<IActionResult> Search(SearchVM searchVM,int take=6,int page=1)
         {
            if (string.IsNullOrEmpty(searchVM.ProdName)) return RedirectToAction("Index","Shop");
 

@@ -1,4 +1,9 @@
-﻿@using SweetHome.Models;
+﻿@inject LayoutService service
+@{
+    var result = service.GetLayout();
+}
+@using SweetHome.Models;
+@using SweetHome.Services;
 @model List<About>
 <!-- ABOUT US AREA START -->
 <div class="ltn__about-us-area pt-120 pb-90 ">
@@ -6,7 +11,7 @@
         <div class="row">
             <div class="col-lg-6 align-self-center">
                 <div class="about-us-img-wrap about-img-left">
-                    <img src="~/assets/img/others/7.png" alt="About Us Image">
+                    <img src="~/assets/img/others/@result["AboutImage"]" alt="About Us Image">
                     <div class="about-us-img-info about-us-img-info-2 about-us-img-info-3">
                     </div>
                 </div>
@@ -16,12 +21,10 @@
                     <div class="section-title-area ltn__section-title-2--- mb-20">
                         <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">About Us</h6>
                         <h1 class="section-title">
-                            The Leading Real Estate
-                            Rental Marketplace<span>.</span>
+                            @result["AboutDesc"]<span>.</span>
                         </h1>
                         <p>
-                            Over 39,000 people work for us in more than 70 countries all over the
-                            This breadth of global coverage, combined with specialist services
+                            @result["AboutThing"]
                         </p>
                     </div>
                     <ul class="ltn__list-item-half clearfix">
@@ -33,15 +36,6 @@
                             </li>
                         }
                     </ul>
-                    <div class="ltn__callout bg-overlay-theme-05  mt-30">
-                        <p>
-                            "Enimad minim veniam quis nostrud exercitation <br>
-                            llamco laboris. Lorem ipsum dolor sit amet"
-                        </p>
-                    </div>
-                    <div class="btn-wrapper animated">
-                        <a asp-controller="About" asp-action="Index" class="theme-btn-1 btn btn-effect-1">About Us</a>
-                    </div>
                 </div>
             </div>
         </div>

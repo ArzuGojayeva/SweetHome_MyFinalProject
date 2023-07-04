@@ -821,8 +821,16 @@
       "PackagePath": "staticwebassets\\assets\\img\\brand-logo\\b5.png"
     },
     {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\0335784d-7dda-49e0-ae8d-14b5f6826f3d_face23.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\buyer\\0335784d-7dda-49e0-ae8d-14b5f6826f3d_face23.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\055057cf-75d4-4f7d-ab21-7fa1fd12bafe_face15.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\buyer\\055057cf-75d4-4f7d-ab21-7fa1fd12bafe_face15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\097edd54-adad-463d-a056-47c05455fe06_face10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\buyer\\097edd54-adad-463d-a056-47c05455fe06_face10.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\0f4151f6-9235-40c2-b2f4-f9e14d240146_face10.jpg",
@@ -897,6 +905,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\buyer\\6f9ca6a8-eb27-47b7-8b89-696d09440ff6_face11.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\7fbbd7ef-ada8-445b-b985-f6f952254f9f_face10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\buyer\\7fbbd7ef-ada8-445b-b985-f6f952254f9f_face10.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\87ccca42-e758-48b1-9f3d-4ccdb4a65ea1_face15.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\buyer\\87ccca42-e758-48b1-9f3d-4ccdb4a65ea1_face15.jpg"
     },
@@ -907,6 +919,10 @@
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\a1cdec82-0152-485d-b991-f16c0ee06e9a_face26.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\buyer\\a1cdec82-0152-485d-b991-f16c0ee06e9a_face26.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\a8c76aea-9b0e-4c23-b9b2-16d3117878ac_face10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\buyer\\a8c76aea-9b0e-4c23-b9b2-16d3117878ac_face10.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\a95a0c8e-c40f-454a-bfe4-592c8ee1d0fa_face2.jpg",
@@ -929,8 +945,16 @@
       "PackagePath": "staticwebassets\\assets\\img\\buyer\\d82a4fd6-7085-4d01-ad97-b21f5497db07_face10.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\df789d43-fa1d-4b8a-8158-633612f8de52_face11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\buyer\\df789d43-fa1d-4b8a-8158-633612f8de52_face11.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\edd1806a-9529-4a4d-89d2-23c8747174e9_face10.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\buyer\\edd1806a-9529-4a4d-89d2-23c8747174e9_face10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\f3afdbc2-9dfd-455f-8e77-1101a46b3a6c_face3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\buyer\\f3afdbc2-9dfd-455f-8e77-1101a46b3a6c_face3.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\buyer\\ff7e560c-a4f9-451c-8274-61eae617dce6_face26.jpg",
@@ -1497,6 +1521,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\09e9f2be-8494-4827-94dc-496cac1a8e85_face25.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\0a07be54-1e48-4895-afd7-f52a36f0209e_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product-3\\0a07be54-1e48-4895-afd7-f52a36f0209e_3.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\0a5587c7-3779-4ee7-9bff-b7f6d8cae524_face6.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\0a5587c7-3779-4ee7-9bff-b7f6d8cae524_face6.jpg"
     },
@@ -1543,6 +1571,10 @@
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\16537ecf-d970-470c-aef0-13445de51065_3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\16537ecf-d970-470c-aef0-13445de51065_3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\16a5c1bf-8f77-4e8e-aeb9-53d1df2f08cc_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product-3\\16a5c1bf-8f77-4e8e-aeb9-53d1df2f08cc_3.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\19051fa6-029a-4769-9a91-63a020146e23_face13.jpg",
@@ -1601,6 +1633,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\2611ace5-1735-4a65-b916-b220ec256d33_1.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\280eae40-8b87-425a-840d-df5596d611cc_5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product-3\\280eae40-8b87-425a-840d-df5596d611cc_5.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\28441447-5952-4add-a722-e9a2abb112b1_face23.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\28441447-5952-4add-a722-e9a2abb112b1_face23.jpg"
     },
@@ -1625,6 +1661,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\3288edde-13f9-4e0d-99a2-113e4c20f7fd_face25.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\33a5dcf5-1bbe-43c9-b6b7-6ace30d47ddd_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product-3\\33a5dcf5-1bbe-43c9-b6b7-6ace30d47ddd_1.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\33bf2bcc-57b2-4492-8d08-ab44afe539c0_face23.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\33bf2bcc-57b2-4492-8d08-ab44afe539c0_face23.jpg"
     },
@@ -1639,6 +1679,10 @@
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\34f46962-e6a0-4151-a8df-2b1d0a1d2a07_face15.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\34f46962-e6a0-4151-a8df-2b1d0a1d2a07_face15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\352c611a-0cef-47ae-a9f2-2688306b0c50_7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product-3\\352c611a-0cef-47ae-a9f2-2688306b0c50_7.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\38f63ca8-e5a3-4b5b-8689-1f435fc3bd76_1.jpg",
@@ -1723,6 +1767,10 @@
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\56e82859-06cb-42c6-b2c9-129493cf4d2b_7.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\56e82859-06cb-42c6-b2c9-129493cf4d2b_7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\58b0a1b6-3d4f-4f74-b481-7a1955c2aa94_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product-3\\58b0a1b6-3d4f-4f74-b481-7a1955c2aa94_1.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\593f93f0-c8db-45ef-85d0-3d5c13276b59_1.jpg",
@@ -1833,6 +1881,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\73ba483e-389d-4706-8446-634fd6efb46a_face27.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\751e5113-5271-4815-8a76-a98fb279d051_5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product-3\\751e5113-5271-4815-8a76-a98fb279d051_5.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\75a0f3f9-f2c8-490a-a54e-8e1997125262_face13.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\75a0f3f9-f2c8-490a-a54e-8e1997125262_face13.jpg"
     },
@@ -1895,6 +1947,10 @@
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\8d0e4bfa-a9cf-49ec-9d1a-9608a6c545b9_face3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\8d0e4bfa-a9cf-49ec-9d1a-9608a6c545b9_face3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\8e864dd9-7314-4907-94bc-7a0a3e3d1c90_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product-3\\8e864dd9-7314-4907-94bc-7a0a3e3d1c90_3.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\8f5c18a4-4946-44c0-b74f-6ced4ae38624_4.jpg",
@@ -1987,6 +2043,10 @@
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\a73e7d36-b781-49f6-a072-ef537b96ebd0_face3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\product-3\\a73e7d36-b781-49f6-a072-ef537b96ebd0_face3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\a7f1975b-a9f0-4f44-aea9-4a4f499adbde_6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\product-3\\a7f1975b-a9f0-4f44-aea9-4a4f499adbde_6.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\product-3\\a855410e-8e64-4ded-a54a-18b9d8556881_1.jpg",
@@ -2505,6 +2565,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\team\\2.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\team\\23aaf5d4-236a-4f11-9fac-ba62bacd2de7_face10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team\\23aaf5d4-236a-4f11-9fac-ba62bacd2de7_face10.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\team\\288a1d97-511b-46f8-b408-fd04fb54157f_face10.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team\\288a1d97-511b-46f8-b408-fd04fb54157f_face10.jpg"
     },
@@ -2621,12 +2685,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\team\\cb5a2f62-bda2-46ba-b2ae-df8299543b5d_face10.jpg"
     },
     {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\team\\d0590f1f-1f72-40fb-af5b-7b360f9d6863_face3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team\\d0590f1f-1f72-40fb-af5b-7b360f9d6863_face3.jpg"
+    },
+    {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\team\\d05ef062-1732-4607-bb28-d917086144a7_face20.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team\\d05ef062-1732-4607-bb28-d917086144a7_face20.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\team\\ea244c9f-e751-49de-a69d-75efd6d6d06b_face10.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\team\\ea244c9f-e751-49de-a69d-75efd6d6d06b_face10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\team\\fd8dbd6b-6f62-44c0-b227-11193a1aacc6_face10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\team\\fd8dbd6b-6f62-44c0-b227-11193a1aacc6_face10.jpg"
     },
     {
       "Id": "C:\\Users\\hp\\OneDrive\\Desktop\\My Final Project\\SweetHome\\SweetHome\\wwwroot\\assets\\img\\testimonial\\1.html",

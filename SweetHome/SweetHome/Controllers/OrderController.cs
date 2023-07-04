@@ -23,7 +23,7 @@ namespace SweetHome.Controllers
         public async Task<IActionResult>CheckOut(int teamid ,int id)
         {
             AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
-            var prd = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            var prd = await _context.Products.OrderByDescending(x=>x.Id).FirstOrDefaultAsync(x => x.Id == id);
             if (prd == null) return NotFound();
             Order order = new Order
             {
@@ -32,7 +32,8 @@ namespace SweetHome.Controllers
                 PurchasedAt=DateTime.Now,
                 TeamId=teamid,
                 ProductName=prd.Name,
-                Price=prd.Price
+                Price=prd.Price,
+                ProductId=prd.Id
             };
             await _context.Order.AddAsync(order);
             await _context.SaveChangesAsync();

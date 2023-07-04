@@ -92,11 +92,11 @@
                                                         @foreach(var item in Model.Team.Products){
                                                         <tr>
                                                             <td class="ltn__my-properties-img">
-                                                                    <a href="product-details.html"><img src="~/assets/img/product-3/@(item.ProductImages.Where(x=>x.IsMain == true).FirstOrDefault()?.Image)" alt="#"></a>
+                                                                    <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id"><img src="~/assets/img/product-3/@(item.ProductImages.Where(x=>x.IsMain == true).FirstOrDefault()?.Image)" alt="#"></a>
                                                             </td>
                                                             <td>
                                                                 <div class="ltn__my-properties-info">
-                                                                    <h6 class="mb-10"><a href="product-details.html">@item.Name</a></h6>
+                                                                        <h6 class="mb-10"><a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></h6>
                                                                     <small><i class="icon-placeholder"></i>@item.City.Name</small>
                                                                 </div>
                                                             </td>

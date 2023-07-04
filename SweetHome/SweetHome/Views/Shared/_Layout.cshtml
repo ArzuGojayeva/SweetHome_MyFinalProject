@@ -1,5 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @using SweetHome.Models;
+@using SweetHome.Services;
+@inject LayoutService service
+@{
+    var result = service.GetLayout();
+}
 @inject UserManager<AppUser> usermanager
 @{
     AppUser member = User.Identity.IsAuthenticated ? usermanager.Users.FirstOrDefault(x => x.UserName == User.Identity.Name) : null;
@@ -46,8 +51,8 @@
                         <div class="col-md-7">
                             <div class="ltn__top-bar-menu">
                                 <ul>
-                                    <li><a href="mailto:info@webmail.com?Subject=Flower%20greetings%20to%20you"><i class="icon-mail"></i> info@webmail.com</a></li>
-                                    <li><a href="locations.html"><i class="icon-placeholder"></i> 15/A, Nest Tower, NYC</a></li>
+                                    <li><a>@(Html.Raw(result["EmailIcon"])) @result["Email"]</a></li>
+                                    <li><a>@(Html.Raw(result["LocatIcon"])) @result["Location"]</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -62,15 +67,15 @@
                         <div class="col">
                             <div class="site-logo-wrap">
                                 <div class="site-logo">
-                                    <a href="index.html"><img src="~/assets/img/logo.png" alt="Logo"></a>
+                                    <a asp-controller="Home" asp-action="Index"><img src="~/assets/img/@result["Image"]" alt="Logo"></a>
                                 </div>
                                 <div class="get-support clearfix d-none">
                                     <div class="get-support-icon">
-                                        <i class="icon-call"></i>
+                                        @(Html.Raw(result["PhoneIcon"]))
                                     </div>
                                     <div class="get-support-info">
                                         <h6>Get Support</h6>
-                                        <h4><a href="tel:+123456789">123-456-789-10</a></h4>
+                                        <h4>@result["Phone"]</h4>
                                     </div>
                                 </div>
                             </div>
@@ -90,8 +95,12 @@
                                              </li>
                                              <li><a asp-controller="Shop" asp-action="Index" >Shop</a>
                                              </li>
-                                            
-                                            <li><a asp-controller="ContactUs" asp-action="Index">Contact</a></li>
+                                            <li>
+                                                <a asp-controller="ContactUs" asp-action="Index">Contact</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Faq" asp-action="Index">Faq</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -111,7 +120,7 @@
                                             }
                                             else
                                             {
-                                                <li><a asp-controller="Dashbaord" asp-action="Index" asp-area="EstateAdmin">@User.Identity.Name</a></li>
+                                                <li><a asp-controller="Home" asp-action="Index">@User.Identity.Name</a></li>
                                                 <li><a asp-controller="Account" asp-action="LogOut">LogOut</a></li>
                                             }
                                             @if (member != null)
@@ -140,6 +149,25 @@
         <div class="ltn__utilize-overlay"></div>
 
         @RenderBody()
+        <!-- CALL TO ACTION START (call-to-action-6) -->
+        <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="call-to-action-inner call-to-action-inner-6 ltn__secondary-bg position-relative text-center---">
+                            <div class="coll-to-info text-color-white">
+                                <h1>Looking for a dream home?</h1>
+                                <p>We can help you realize your dream of a new home</p>
+                            </div>
+                            <div class="btn-wrapper">
+                                <a class="btn btn-effect-3 btn-white" asp-controller="ContactUs" asp-action="Index">Explore Properties <i class="icon-next"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CALL TO ACTION END -->
    <!-- FOOTER AREA START -->
     <footer class="ltn__footer-area  ">
         <div class="footer-top-area  section-bg-2 plr--5">
@@ -149,34 +177,34 @@
                         <div class="footer-widget footer-about-widget">
                             <div class="footer-logo">
                                 <div class="site-logo">
-                                    <img src="~/assets/img/logo-2.png" alt="Logo">
+                                    <img src="~/assets/img/@result["Image"]" alt="Logo">
                                 </div>
                             </div>
-                            <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is dummy text of the printing.</p>
+                            <p>@result["Desc"]</p>
                             <div class="footer-address">
                                 <ul>
                                     <li>
                                         <div class="footer-address-icon">
-                                            <i class="icon-placeholder"></i>
+                                            @(Html.Raw(result["LocatIcon"]))
                                         </div>
                                         <div class="footer-address-info">
-                                            <p>Brooklyn, New York, United States</p>
+                                            <p>@result["Location"]</p>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="footer-address-icon">
-                                            <i class="icon-call"></i>
+                                            @(Html.Raw(result["PhoneIcon"]))
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="tel:+0123-456789">+0123-456789</a></p>
+                                            <p><a>@result["Phone"]</a></p>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="footer-address-icon">
-                                            <i class="icon-mail"></i>
+                                            @(Html.Raw(result["EmailIcon"]))
                                         </div>
                                         <div class="footer-address-info">
-                                            <p><a href="mailto:example@example.com">example@example.com</a></p>
+                                            <p>@result["Email"]</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -188,8 +216,8 @@
                             <h4 class="footer-title">Company</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a asp-controller="Shop" asp-action="Index">All Products</a></li>
+                                        <li><a asp-controller="About" asp-action="Index">About</a>
+                                        <li><a asp-controller="Shop" asp-action="Index">All Products</a></li>
                                         <li><a asp-controller="ContactUs" asp-action="Index">Contact us</a></li>
                                 </ul>
                             </div>
@@ -200,7 +228,7 @@
                             <h4 class="footer-title">Customer Care</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="login.html">Login</a></li>
+                                        <li><a asp-controller="Faq" asp-action="Index">Faq</a></li>
                                         @if (member != null)
                                         {
                                             if (member.IsAgent == true)
@@ -212,7 +240,7 @@
                                                 <li><a asp-controller="MyAccount" asp-action="BuyerProfile">My Account</a></li>
                                             }
                                         }
- 
+                                        <li><a asp-controller="Team" asp-action="Index">Team</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -225,7 +253,7 @@
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="ltn__copyright-design clearfix">
-                            <p>All Rights Reserved Company <span class="current-year"></span></p>
+                            <p>@result["End"]<span class="current-year"></span></p>
                         </div>
                     </div>
                 </div>

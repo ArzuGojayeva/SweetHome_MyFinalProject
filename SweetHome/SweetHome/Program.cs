@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SweetHome.DAL;
 using SweetHome.Models;
+using SweetHome.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
@@ -11,6 +12,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
     opt.Password.RequireNonAlphanumeric = false;
     opt.SignIn.RequireConfirmedEmail =true;
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+builder.Services.AddScoped<LayoutService>();
 var app = builder.Build();
 
 app.UseRouting();

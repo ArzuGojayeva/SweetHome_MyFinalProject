@@ -81,6 +81,7 @@ namespace SweetHome.Controllers
             }
             else
             {
+                //await _userManager.AddToRoleAsync(newUser, "admin");
                 await _userManager.AddToRoleAsync(newUser, "buyer");
             }
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
@@ -98,6 +99,7 @@ namespace SweetHome.Controllers
             mailMessage.IsBodyHtml = true;
 
             smtpClient.Send(mailMessage);
+
             return RedirectToAction("Login", "Account");
         }
 
@@ -146,33 +148,12 @@ namespace SweetHome.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index","Home");
         }
-        //public async Task<IActionResult> AddRole()
-        //{
-        //    await _roleManager.CreateAsync(new IdentityRole { Name = "agent" });
-        //    await _roleManager.CreateAsync(new IdentityRole { Name = "buyer" });
-        //    await _roleManager.CreateAsync(new IdentityRole { Name = "admin" });
-        //    return NoContent();
-        //}
-        public async Task<IActionResult> AdminRole()
+        public async Task<IActionResult> AddRole()
         {
-            //AppUser admin = new AppUser()
-            //{
-            //    UserName = "admin"
-            //};
-            //var result = await _userManager.CreateAsync(admin, "Admin123");
-            //if (!result.Succeeded)
-            //{
-            //    foreach(var item in result.Errors)
-            //    {
-            //        ModelState.AddModelError("", item.Description);
-            //    return View();
-            //    }
-            //}
-            //var user = await _userManager.FindByNameAsync("admin");
-            //await _userManager.AddToRoleAsync(user, "admin");
-            //await _signInManager.SignInAsync(user, false);
-            return Json("Okay");
-
+           await _roleManager.CreateAsync(new IdentityRole { Name = "agent" });
+           await _roleManager.CreateAsync(new IdentityRole { Name = "buyer" });
+           await _roleManager.CreateAsync(new IdentityRole { Name = "admin" });
+           return NoContent();
         }
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {

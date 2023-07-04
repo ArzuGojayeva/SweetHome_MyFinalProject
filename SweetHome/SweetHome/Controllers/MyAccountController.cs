@@ -284,7 +284,7 @@ namespace SweetHome.Controllers
         public async Task<IActionResult> OrderBuyer()
         {
             AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);
-            List<Order> orders = await _context.Order.Where(x => x.AppUserId == user.Id).ToListAsync();
+            List<Order> orders = await _context.Order.Where(x => x.AppUserId == user.Id).OrderByDescending(x=>x.Id).ToListAsync();
 
             return View(orders);
         }
@@ -294,7 +294,7 @@ namespace SweetHome.Controllers
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             if (user.IsAgent == true)
             {
-                var team = await _context.Teams.Include(x => x.Orders).FirstOrDefaultAsync(x => x.Email == user.Email);
+                var team = await _context.Teams.Include(x => x.Orders).OrderByDescending(x=>x.Id).FirstOrDefaultAsync(x => x.Email == user.Email);
             return View(team);
             }
             return View();

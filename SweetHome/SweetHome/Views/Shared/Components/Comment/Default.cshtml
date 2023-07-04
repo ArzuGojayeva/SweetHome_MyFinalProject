@@ -1,0 +1,15 @@
+﻿@using SweetHome.ViewModels;
+@model CommentVM
+<h3>Add Your Comment</h3>
+<div class="ltn__comment-reply-area ltn__form-box mb-30">
+    <form asp-controller="Home" asp-action="CreateComment">
+        <div class="input-item input-item-textarea ltn__custom-icon">
+            <textarea asp-for="Description" placeholder="Type your comments...."></textarea>
+        </div>
+            <input hidden asp-for="ProductId" />
+            <input hidden asp-for="AppUserId" />
+        <div class="btn-wrapper">
+            <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Submit</button>
+        </div>
+    </form>
+</div>

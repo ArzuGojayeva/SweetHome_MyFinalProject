@@ -282,6 +282,37 @@ namespace SweetHome.Migrations
                     b.ToTable("Cities");
                 });
 
+            modelBuilder.Entity("SweetHome.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("SweetHome.Models.Contact", b =>
                 {
                     b.Property<int>("Id")
@@ -305,6 +336,27 @@ namespace SweetHome.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Contacts");
+                });
+
+            modelBuilder.Entity("SweetHome.Models.Faq", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Faq");
                 });
 
             modelBuilder.Entity("SweetHome.Models.HomeType", b =>
@@ -446,6 +498,27 @@ namespace SweetHome.Migrations
                     b.ToTable("ProductImages");
                 });
 
+            modelBuilder.Entity("SweetHome.Models.Settings", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings");
+                });
+
             modelBuilder.Entity("SweetHome.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -566,6 +639,25 @@ namespace SweetHome.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SweetHome.Models.Comment", b =>
+                {
+                    b.HasOne("SweetHome.Models.AppUser", "ApplicationUser")
+                        .WithMany("Comments")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SweetHome.Models.Product", "Product")
+                        .WithMany("Comments")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("SweetHome.Models.Order", b =>
                 {
                     b.HasOne("SweetHome.Models.AppUser", "AppUser")
@@ -641,6 +733,8 @@ namespace SweetHome.Migrations
 
             modelBuilder.Entity("SweetHome.Models.AppUser", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Orders");
                 });
 
@@ -661,6 +755,8 @@ namespace SweetHome.Migrations
 
             modelBuilder.Entity("SweetHome.Models.Product", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Orders");
 
                     b.Navigation("ProductImages");

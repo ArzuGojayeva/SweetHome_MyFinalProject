@@ -15,7 +15,7 @@ namespace SweetHome.Controllers
 
         public IActionResult Index()
         {
-            return View(_context.Teams.ToList());
+            return View(_context.Teams.OrderByDescending(x=>x.Id).ToList());
         }
         public async Task<IActionResult> Detail(int id)
         {

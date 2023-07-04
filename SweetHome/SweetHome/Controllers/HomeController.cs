@@ -26,11 +26,15 @@ namespace SweetHome.Controllers
         }
         public async Task<IActionResult> Detail(int id)
         {
-            var prd = await _context.Products.Where(x => x.IsDeleted == false).Include(x => x.Team).Include(x => x.ProductImages).
-                Include(x => x.Category).Include(x => x.Status).Include(x => x.HomeType).Include(x => x.City).FirstOrDefaultAsync(x => x.Id == id);
-            return View(prd);
+            CommentVM commentVM = new CommentVM();
+            commentVM.Product = await _context.Products.Where(x => x.IsDeleted == false).Include(x => x.Team).Include(x => x.ProductImages).
+                Include(x => x.Category).Include(x => x.Status).Include(x => x.HomeType).Include(x => x.City).FirstOrDefaultAsync(x => x.Id == id); ;
+
+            commentVM.Comments = await _context.Comments.Include(x => x.Product).
+                Include(x => x.ApplicationUser).Where(x => x.ProductId == id).ToListAsync();
+            return View(commentVM);
         }
-        public async Task<IActionResult> Filter(FilterVM filtervm,int take=3,int page=1)
+        public async Task<IActionResult> Filter(FilterVM filtervm,int take=6,int page=1)
         {
             int? categoryid = 0;
             int? hometypeid = 0;
@@ -63,6 +67,19 @@ namespace SweetHome.Controllers
         {
             var procount = _context.Products.Count();
             return (int)Math.Ceiling((double)procount / take);
+        }
+        public async Task<IActionResult> CreateComment(CommentVM comment)
+        {
+            if (!User.Identity.IsAuthenticated) return RedirectToAction("Login", "Account");
+            await _context.Comments.AddAsync(new Comment
+            {
+                Description = comment.Description,
+                Date = DateTime.UtcNow,
+                AppUserId = comment.AppUserId,
+                ProductId = comment.ProductId,
+            });
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Detail", new { id = comment.ProductId });
         }
     }
 }
